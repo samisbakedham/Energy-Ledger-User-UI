@@ -36,7 +36,7 @@ const Header = () => {
             resolve(data);
         });
         });
-        
+
         // await blockchainService.initElxContractInstance()
 
         }else{
@@ -45,10 +45,10 @@ const Header = () => {
               resolve(data);
           });
           });
-          
+
         }
-      
-      
+
+
     })();
 
   } , [isLoggedIn , user?.wallet_address]);
@@ -60,10 +60,10 @@ const Header = () => {
                       ]
      if(!bridgeUrls.includes(location.pathname)){
 
-    
+
        if(window.ethereum.networkVersion!==configService.getBlockchainNetworkId()){
          let _confirmResponse=await confirmationService.showAlert(
-           "Warning!", 
+           "Warning!",
            "Please select BNB Network",
            "warning"
          );
@@ -75,21 +75,21 @@ const Header = () => {
             window.location.reload();
                 }else{
             alertService.showError(v.message);
-    
+
           }
-        }    
-         } 
+        }
+         }
      }
     })();
   });
- 
+
   const userRole=user?.role;
   // console.log(userRole)
 
    const dispatch = useDispatch();
    const navigate = useNavigate();
 
- 
+
   const logOut = async () => {
     let _confirmResponse = await confirmationService.showConfirm(
       "Are you sure?",
@@ -103,7 +103,7 @@ const Header = () => {
       navigate("/");
     }
   };
-  
+
 
     return (
       <header className="flex flex-wrap">
@@ -134,7 +134,7 @@ const Header = () => {
                 </svg>
               </button>
               <h2 className="font-semibold text-coalblack text-2xl md:inline-block hidden">
-                Welcome to Energy Ledger
+                Welcome to Candle
               </h2>
             </div>
 
@@ -360,7 +360,7 @@ const Header = () => {
                             </Link>
                           )}
                         </Menu.Item>}
-                      
+
                         <Menu.Item>
                           {({ active }) => (
                             <button
